@@ -1,0 +1,128 @@
+/* pages/peripheral/peripheral.wxss */
+
+.page {
+  height: 100%;
+  width: 100%;
+  background: #f0f0f0;
+}
+
+.name-view {
+  font-size: 50rpx;
+  color: #555;
+  height: 100rpx;
+  margin-left: 20rpx;
+  font-weight: 900;
+}
+
+.uuid-view {
+  font-size: 26rpx;
+  color: #555;
+  height: 60rpx;
+  margin-left: 20rpx;
+}
+
+.status-view{
+  font-size: 30rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+}
+
+.advertisData-title {
+  font-size: 40rpx;
+  color: #555;
+  height: 90rpx;
+  margin-left: 30rpx;
+}
+
+.advertisData-view {
+  background: white;
+  height: 100rpx;
+  width: 100%;
+}
+
+.advertisData-view .text1 {
+  margin-left: 30rpx;
+  font-size: 40rpx;
+  font-weight: 200;
+}
+
+.advertisData-view .text2 {
+  margin-left: 30rpx;
+  font-size: 25rpx;
+  font-weight: 200;
+}
+
+.services-view {
+  width: 100%;
+  height: auto;
+}
+
+.service-uuid {
+  margin-top: 30rpx;
+  font-size: 35rpx;
+  color: #555;
+  height: 100rpx;
+  margin-left: 30rpx;
+  line-height: 40rpx;
+}
+
+.characteristics-view {
+  height: auto;
+  width: 100%;
+  background: white;
+}
+
+.characteristic-view {
+  background: white;
+  height: 100rpx;
+  width: 100%;
+}
+
+.characteristic-view .uuid-view {
+  flex: 1;
+  height: 100%;
+  margin-left: 30rpx;
+}
+
+.characteristic-view .uuid-view .uuid{
+  margin-top: 18rpx;
+  height: 35rpx;
+  font-size: 30rpx;
+  font-weight: 300;
+}
+
+.characteristic-view .uuid-view .properties{
+  font-size: 25rpx;
+  font-weight: 300;
+}
+
+.characteristic-view .arrow {
+  margin-right: 20rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.characteristics-view .line-view {
+  height: 2rpx;
+  width: 96%;
+  margin-left: 4%;
+  background:#e0e0e0;
+}
+
+.about-view {
+  margin-top: 60rpx;
+  height: 80rpx;
+  width: 100%;
+  background: white;
+  justify-content: space-between;
+}
+
+.about-view text {
+  margin-left: 30rpx;
+}
+
+.about-view .arrow {
+  margin-right: 20rpx;
+  height: 30rpx;
+  width: 30rpx;
+}

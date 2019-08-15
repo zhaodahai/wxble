@@ -1,0 +1,19 @@
+<!--pages/about/about.wxml-->
+
+<view class='page flex-column-center'>
+
+  <image class='icon' src='../../images/about/ble.png'></image>
+
+  <text class='title'>BLE蓝牙开发助手</text>
+
+  <text class='version'>版本 1.0.3</text>
+
+  <view class='repository flex-column-center'>
+    <text class='text1'>wx-ant-ble</text>
+    <text class='text2'>版本<text class='text3'>{{version}}</text></text>
+    <text class='text2'>仓库：</text>
+    <text class='text3'>https://github.com/zhaodahai/wx-ant-ble</text>
+  </view>
+
+</view>
+

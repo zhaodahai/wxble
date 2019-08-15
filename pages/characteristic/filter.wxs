@@ -1,0 +1,33 @@
+
+
+module.exports = {
+
+  toFix: function (num, count) {
+    return num.toFixed(count);
+  },
+
+  toFix1: function (num) {
+    return num.toFixed(1);
+  },
+
+  toFix2: function (num) {
+    return num.toFixed(2);
+  },
+
+  strToArray: function(str) {
+    var arr = [];
+    var i = 0;
+    for ( ; i < str.length; i += 2) {
+      arr.push(str.slice(i , i + 2));
+    }
+    return arr;
+  },
+
+
+
+}
+
+
+
+
+

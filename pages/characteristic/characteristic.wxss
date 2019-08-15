@@ -1,0 +1,267 @@
+/* pages/characteristic/characteristic.wxss */
+.page {
+  height: 100%;
+  width: 100%;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-status-view {
+  height: 70rpx;
+  justify-content: space-between;
+}
+
+.service-status-view .status-text{
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-right: 30rpx;
+}
+
+.title-view {
+  margin-top: 10rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: #555;
+}
+
+.service-uuid {
+  height: 60rpx;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  font-weight: 300;
+  color: #333;
+  background: white;
+}
+
+.characteristic-uuid {
+  height: 60rpx;
+  font-size: 30rpx;
+  background: white;
+}
+
+.characteristic-uuid .uuid{
+  margin-left: 20rpx;
+  font-size: 27rpx;
+  height: 100%;
+  line-height: 60rpx;
+  font-weight: 300;
+  flex: 1;
+}
+
+.characteristic-uuid .btn{
+  color: #1E90FF;
+  font-size: 25rpx;
+  width: 120rpx;
+  line-height: 50rpx;
+  margin-right: 10rpx;
+  text-align: center;
+}
+
+.notifys-view {
+  height: 150rpx;
+  width: 100%;
+  background: white;
+}
+
+.notifys-view .cell-view {
+  height: 50rpx;
+  width: 100%;
+}
+
+.notifys-view .cell-view .uuid{
+  margin-left: 20rpx;
+  font-size: 27rpx;
+  height: 100%;
+  line-height: 50rpx;
+  font-weight: 300;
+  flex: 1;
+  overflow: hidden; 
+  white-space: nowrap;     
+  text-overflow: ellipsis;
+}
+
+.notifys-view .cell-view .btn{
+  color: #1E90FF;
+  font-size: 25rpx;
+  width: 130rpx;
+  line-height: 50rpx;
+  margin-right: 10rpx;
+  text-align: center;
+}
+
+.characteristic-value-view {
+  height: 450rpx;
+  width: 100%;
+  background: white;
+}
+
+.characteristic-value-view .btn-view {
+  height: 60rpx;
+  justify-content: space-between;
+  padding: 0rpx 50rpx;
+}
+
+.characteristic-value-view .btn-view .empty-btn{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.characteristic-value-view .btn-view .read-write{
+  height: 40rpx;
+  width: 200rpx;
+  justify-content: space-between;
+}
+
+.characteristic-value-view .btn-view .read-text,.write-text{
+  height: 40rpx;
+  width: 100rpx;
+  font-size: 30rpx;
+}
+
+.characteristic-value-view .btn-view .read-text text{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.characteristic-value-view .btn-view .read-text view{
+  height: 8rpx;
+  width: 30rpx;
+  background: #ccc;
+}
+
+.characteristic-value-view .btn-view .write-text text{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.characteristic-value-view .btn-view .write-text view{
+  height: 8rpx;
+  width: 30rpx;
+  background: green;
+}
+
+.characteristic-value-view .line-view {
+  height: 2rpx;
+  width: 100%;
+  background:#e0e0e0;
+}
+
+.characteristic-value-view .index-view {
+  height: 30rpx;
+  width: 100%;
+  background: lightblue;
+}
+
+.characteristic-value-view .index-box-view{
+  height: 100%;
+  flex: 1;
+  /* justify-content: space-between; */
+  /* padding: 0rpx 8rpx; */
+}
+
+.characteristic-value-view .index-view text{
+  font-size: 20rpx;
+  font-weight: bold;
+  width: 5%;
+  text-align: center;
+}
+
+.characteristic-value-view .time-view{
+  width: 100rpx;
+  height: 100%;
+}
+
+.characteristic-scroll-view {
+  height: 350rpx;
+  width: 100%;
+}
+
+.characteristic-scroll-view .cell-view {
+  height: 40rpx;
+}
+
+.characteristic-scroll-view .cell-view .time {
+  width: 100rpx;
+  height: 100%;
+  font-size: 25rpx;
+  font-weight: 400;
+}
+
+.characteristic-scroll-view .cell-view .value {
+  font-size: 25rpx;
+  font-weight: 300;
+  flex: 1;
+}
+
+.characteristic-scroll-view .cell-view .value text{
+  width: 5%;
+  text-align: center;
+}
+
+.bottom-view {
+  flex: 1;
+  width: 100%;
+}
+
+.input-view {
+  margin-top: 20rpx;
+  height: 70rpx;
+  width: 96%;
+  background: white;
+  border-radius: 10rpx;
+}
+
+.input-view input {
+  flex: 1;
+  padding: 0rpx 10rpx;
+  font-size: 25rpx;
+}
+
+.input-view image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.input-view .send-btn {
+  height: 100%;
+  width: 120rpx;
+  color: #1E90FF;
+}
+
+.history-view {
+  flex: 1;
+  width: 100%;
+}
+
+.history-scroll-view {
+  width: 96%;
+  height: 85%;
+  background: white;
+  border-radius: 10rpx;
+  padding-top: 10rpx;
+}
+
+.history-scroll-view .cell-view {
+  height: 50rpx;
+  margin-left: 10rpx;
+}
+
+.history-scroll-view .cell-view .value {
+  font-size: 25rpx;
+  font-weight: 300;
+  flex: 1;
+}
+
+.history-scroll-view .cell-view .delete {
+  width: 20rpx;
+  height: 20rpx;
+  margin: 0rpx 10rpx;
+}
+
+.history-scroll-view .cell-view .value text{
+  width: 5%;
+  text-align: center;
+}

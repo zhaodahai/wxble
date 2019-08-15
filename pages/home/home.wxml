@@ -1,0 +1,60 @@
+<!--pages/home/home.wxml-->
+
+<view class='page flex-column-center'>
+
+  <view class='btn-box-view flex-row-center'>
+    <view class='btn-sort flex-center' hover-class='btn-hover' catchtap='_sort'>
+      <image class='btn-image' src='../../images/home/sort.png'></image>
+    </view>
+    <view class='btn-view flex-center' hover-class='btn-hover' catchtap='_scan'>扫描</view>
+    <view class='btn-view flex-center' hover-class='btn-hover' catchtap='_stopScan'>停止扫描</view>
+    <view class='btn-view flex-center' hover-class='btn-hover' catchtap='_refresh'>刷新</view>
+  </view>
+
+  <view class='peripherals-nearby-view flex-row-center'>
+    <text class='text1' catchtap='_displayFilter'>Filter {{filterRssi+"  "+filterName}}</text>
+    <text class='text2' catchtap='_about'>About</text>
+  </view>
+
+  <view wx:if='{{showFilter}}' class='filter-view flex-column-center'>
+    <view class='box flex-column-center'>
+      <text class='title'>Filter</text>
+      <view class='name-view flex-column-center'>
+        <text>Name</text>
+        <input placeholder='filter name' value='{{filterName}}' bindinput='_bindinput'></input>
+      </view>
+      <view class='rssi-view flex-column-center'>
+        <view>RSSI：{{filterRssi}}</view>
+        <slider min='-100' max='-30' value='{{filterRssi}}' show-value bindchanging='_bindchanging'></slider>
+      </view>
+      <view class='confirm-btn flex-center' hover-class='btn-hover'  catchtap='_displayFilter'>确 定</view>
+    </view>
+  </view>
+
+  <view class='scroll-bg-view'>
+    <image wx:if='{{!devices.length}}' class='no-peripherals' src='../../images/home/no_peripherals.png'></image>
+    <scroll-view scroll-y>
+      <block wx:for='{{devices}}' wx:key='{{item.deviceId}}'>
+        <view class='device-view flex-row-center' id='{{index}}' hover-class='btn-hover' catchtap='_connect'>
+          <view class='signal-image-view flex-column-center'>
+            <image class='signal-image' src='../../images/home/signal{{item.RSSI<-75?1:item.RSSI<-65?2:item.RSSI<-55?3:4}}.png'></image>
+            <text>{{item.RSSI?item.RSSI:'---'}}</text>
+          </view>
+
+          <view class='name-service-view flex-column-left'>
+            <view class='name-view'>{{item.name?item.name:"Unnamed"}}</view>
+            <view class='service-view '>{{item.advertisServiceUUIDs.length?item.advertisServiceUUIDs.length===1?item.advertisServiceUUIDs.length+" service":item.advertisServiceUUIDs.length+" services":"No services"}}
+            </view>
+          </view>
+
+          <view class='mac-view flex-row-center'>{{item.deviceId}}</view>
+
+          <image class='arrow-image' src='../../images/home/arrow.png'></image>
+        </view>
+        <view class='line-view' />
+      </block>
+    </scroll-view>
+  </view>
+</view>
+
+

@@ -1,0 +1,84 @@
+<!--pages/characteristic/characteristic.wxml-->
+<wxs src="./filter.wxs" module="filter" />
+
+<view class='page'>
+  <view class='service-status-view flex-row-center'>
+    <view class='title-view'>SERVICE UUID</view>
+    <text class='status-text' style='color:{{connected?"#76d386":"red"}}'>{{connected?"Connected":"Disconnected"}}</text>
+  </view>
+  <view class='service-uuid flex-row-center'>0x{{characteristic.suuid}}</view>
+  <view class='title-view'>CHARACTERISTIC UUID</view>
+  <view class='characteristic-uuid flex-row-center'>
+    <text class='uuid'>0x{{characteristic.cuuid}}</text>
+    <text wx:if='{{characteristic.properties.read}}' class='btn' hover-class='btn-hover' catchtouchstart='_read'>Read</text>
+  </view>
+  <view class='title-view'>DEVICE NOTIFY CHARACTERISTIC UUIDS</view>
+  
+  <scroll-view style='height:{{notifyUUIDs.length>=3?150:notifyUUIDs.length*50}}rpx' class='notifys-view flex-row-center' scroll-y>
+    <view class='cell-view flex-row-center' wx:for='{{notifyUUIDs}}' wx:key='{{index}}'>
+      <text class='uuid'>0x{{item.cuuid}}</text>
+      <text class='btn' id='{{index}}' hover-class='btn-hover' catchtouchstart='_listen'>{{item.isListening?"Stop listen":"Listen"}}</text>
+    </view> 
+  </scroll-view>
+
+  <!-- <view class='status-view flex-row-center' style='color:{{connected?"#76d386":"red"}}'>{{connected?"Connected":"Disconnected"}}</view> -->
+
+  <view class='title-view'>CHARACTERISTIC VALUES</view>
+  <view class='characteristic-value-view'>
+
+    <view class='btn-view flex-row-center'>
+      <view class='read-write flex-row-center'>
+        <view class='read-text flex-row-center'>
+          <text>R</text>
+          <view></view>
+        </view>
+        <view class='write-text flex-row-center'>
+          <text>W</text>
+          <view></view>
+        </view>
+      </view>
+      <image class='empty-btn flex-center' src='../../images/peripheral/empty.png' hover-class='btn-hover' catchtouchstart='_empty'></image>
+    </view>
+
+    <view class='index-view flex-row-center'>
+      <view class='time-view'></view>
+      <view class='index-box-view flex-row-center'>
+        <text wx:for='{{[0,"","","","",5,"","","","",10,"","","","",15,"","","",""]}}' wx:key='{{item}}'>{{item}}</text>
+      </view>
+    </view>
+
+    <scroll-view class='characteristic-scroll-view' scroll-y scroll-top="{{scrollTop}}">
+      <block wx:for='{{cv}}' wx:key='{{index}}'>
+        <view class='cell-view flex-row-center' style='color:{{item.type==="w"?"green":"black"}}'>
+          <view class='time flex-row-center'>{{item.time}}</view>
+          <view class='value flex-row-center' >
+            <text wx:for='{{filter.strToArray(item.value)}}' wx:key='{{index}}'>{{item}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+  </view>
+  
+  <view wx:if='{{characteristic.properties.write}}' class='bottom-view flex-column-center'>
+    <view class='input-view flex-row-center'>
+      <input confirm-type='send' focus='{{inputFocus}}' value='{{inputValue}}' type='text' placeholder='input cmd（HEX）' bindinput='_bindinput' bindconfirm='_send' catchtouchstart='_inputFocus'></input>
+      <image hidden='{{!inputValue}}' src='../../images/peripheral/x1.png' hover-class='btn-hover' catchtouchstart='_deleteInput'></image>
+      <view class='send-btn flex-center' hover-class='btn-hover' catchtouchstart='_send'>Send</view>
+    </view>
+    
+    <view class='history-view flex-center'>
+      <scroll-view class='history-scroll-view' scroll-y>
+        <block wx:for='{{wv}}' wx:key='{{index}}'>
+          <view class='cell-view flex-row-center'>
+            <view class='value flex-row-center' id='{{index}}' catchtouchend='_selectCmd'>
+              <text wx:for='{{filter.strToArray(item.value)}}' wx:key='{{index}}'>{{item}}</text>
+            </view>
+            <image class='delete' src='../../images/peripheral/x2.png' id='{{index}}' hover-class='btn-hover' catchtouchstart='_deleteCmd'></image>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+
+</view>

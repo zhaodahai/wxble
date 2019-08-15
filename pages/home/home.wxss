@@ -1,0 +1,217 @@
+/* pages/home/home.wxss */
+
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.btn-box-view {
+  margin-top: 50rpx;
+  height: 100rpx;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.btn-sort {
+  width: 80rpx;
+  height: 90rpx;
+  background: #1E90FF;
+  border-radius: 10rpx;
+  margin-left: 0rpx;
+}
+
+.btn-sort text {
+  color: white;
+  font-size: 60rpx;
+}
+
+.btn-sort image {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.btn-view {
+  width: 25%;
+  height: 100%;
+  background: #1E90FF;
+  color: white;
+  border-radius: 10rpx;
+}
+
+.btn-hover {
+  opacity: 0.7;
+}
+
+.peripherals-nearby-view {
+  margin-top: 30rpx;
+  width: 100%;
+  height: 60rpx;
+  background: #333;
+  justify-content: space-between;
+  color: white;
+}
+
+.peripherals-nearby-view .text1{
+  margin-left: 30rpx;
+}
+
+.peripherals-nearby-view .text2{
+  margin-right: 30rpx;
+}
+
+.filter-view {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.filter-view .box {
+  margin-top: 250rpx;
+  background: white;
+  height: 550rpx;
+  width: 480rpx;
+  border-radius: 10rpx;
+}
+
+.filter-view .box .title{
+  margin-top: 40rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.filter-view .box .name-view {
+  margin-top: 30rpx;
+  height: 150rpx;
+  width: 90%;
+}
+
+.filter-view .box .name-view text{
+  width: 120rpx;
+  height: 60rpx;
+}
+
+.filter-view .box .name-view input{
+  width: 80%;
+  height: 50rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 5rpx;
+  border: 1rpx solid #ccc;
+}
+
+.filter-view .confirm-btn {
+  height: 80rpx;
+  width: 160rpx;
+  background: #1E90FF;
+  color: white;
+  border-radius: 10rpx;
+}
+
+.filter-view .box .rssi-view {
+  height: 150rpx;
+  width: 90%;
+}
+
+.filter-view .box .rssi-view slider{
+  width: 90%;
+  height: 50rpx;
+  padding: 5rpx 10rpx;
+}
+
+.scroll-bg-view {
+  margin-top: 0rpx;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-bg-view .no-peripherals {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-bg-view scroll-view {
+  width: 100%;
+  height: 100%;
+}
+
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.device-view {
+  height: 100rpx;
+  width: 100%;
+}
+
+.signal-image-view {
+  height: 100%;
+  width: 100rpx;
+}
+
+.signal-image-view image {
+  margin-top: 5rpx;
+  height: 50rpx;
+  width: 60rpx;
+}
+
+.signal-image-view text {
+  font-weight: 1000;
+  font-size: 25rpx;
+}
+
+.device-view .name-service-view {
+  width: 250rpx;
+  height: 100%;
+}
+
+.device-view .name-service-view .name-view{
+  width: 245rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow: hidden; 
+  white-space: nowrap;     
+  text-overflow: ellipsis;
+}
+
+.device-view .name-service-view .service-view{
+  font-size: 30rpx;
+  flex: 1;
+}
+
+.device-view .mac-view {
+  flex: 1;
+  font-size: 28rpx;
+  height: 100%;
+  line-height: 40rpx;
+}
+
+.device-view .arrow-image {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.line-view {
+  height: 2rpx;
+  margin-left: 3%;
+  width: 97%;
+  background: #ccc;
+}

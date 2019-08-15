@@ -1,0 +1,46 @@
+<!--pages/peripheral/peripheral.wxml-->
+
+<view class='page'>
+
+  <view class='name-view flex-row-center'>{{device.name || "Unnamed"}}</view>
+
+  <view class='uuid-view flex-row-center'>DeviceId：{{device.deviceId}}</view>
+
+  <view class='status-view flex-row-center' style='color:{{connected?"#76d386":"red"}}'>{{connected?"Connected":"Disconnected"}}</view>
+
+  <view class='advertisData-title flex-row-center'>广播数据</view>
+
+  <view class='advertisData-view flex-column-left'>
+    <text class='text1'>0x{{device.advertisData}}</text>
+    <text class='text2'>Manufacturer Data</text>
+  </view>
+
+  <view class='services-view'>
+    <block wx:for='{{device.services}}' wx:for-item='service' wx:key='{{service.serviceId}}'>
+      <view class='service-view'>
+        <view class='service-uuid flex-row-center'>UUID：{{service.serviceId}}</view>
+        <view class='characteristics-view'>
+          <block wx:for='{{service.characteristics}}' wx:for-item='characteristic' wx:for-index="idx" wx:key='{{characteristic.uuid}}'>          
+            <view wx:if='{{idx!==0}}' class='line-view'></view>
+            <view class='characteristic-view flex-row-center' data-sid='{{index}}' data-cid='{{idx}}' hover-class='btn-hover' catchtap='_selectCharacteristic'>
+              <view class='uuid-view flex-column-left'>
+                <text class='uuid flex-row-center'>{{characteristic.uuid}}</text>
+                <text class='properties flex-row-center'>Properties：{{(characteristic.properties.read?'Read ':'')+(characteristic.properties.notify?'Notify ':'')+(characteristic.properties.write?'Write ':'')}}</text>
+              </view>
+              <image class='arrow' src='../../images/peripheral/arrow.png'></image>
+            </view>
+          </block>
+        </view>
+      </view>
+
+    </block>
+  </view>
+
+  <!-- <view class='about-view flex-row-center' catchtap='_about'>
+    <text>关于</text>
+    <image class='arrow' src='../../images/peripheral/arrow.png'></image>
+  </view> -->
+
+</view>
+
+
