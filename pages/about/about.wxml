@@ -5,13 +5,14 @@
   <image class='icon' src='../../images/about/ble.png'></image>
 
   <text class='title'>BLE蓝牙开发助手</text>
-
   <text class='version'>版本 1.0.3</text>
+  <text class='text2'>仓库地址：</text>
+  <text class='text3'>https://github.com/zhaodahai/wxble</text>
 
   <view class='repository flex-column-center'>
     <text class='text1'>wx-ant-ble</text>
-    <text class='text2'>版本<text class='text3'>{{version}}</text></text>
-    <text class='text2'>仓库：</text>
+    <text class='text2'>版本 <text class='text3'>{{version}}</text></text>
+    <text class='text2'>仓库地址：</text>
     <text class='text3'>https://github.com/zhaodahai/wx-ant-ble</text>
   </view>
 
