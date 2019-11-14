@@ -16,5 +16,9 @@
     <text class='text3'>https://github.com/zhaodahai/wx-ant-ble</text>
   </view>
 
+    
+  <view class="ad-container">
+    <ad unit-id="adunit-0dfcf9bf7128d3e9" ad-intervals="30"></ad>
+  </view>
 </view>
 

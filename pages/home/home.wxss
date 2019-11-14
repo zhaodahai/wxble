@@ -215,3 +215,7 @@
   width: 97%;
   background: #ccc;
 }
+
+.ad-container {
+  width: 100%;
+}

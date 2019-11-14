@@ -46,3 +46,9 @@
   color: blue;
   text-align: center;
 }
+
+.ad-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

@@ -183,8 +183,7 @@ Page({
   _displayFilter() {
     if (this.data.showFilter) {
       let devices = this.data.devices.filter(v => {
-        console.log(111,v);
-        return v.RSSI >= this.data.filterRssi && (v.name && ~v.name.indexOf(this.data.filterName))
+        return v.RSSI >= this.data.filterRssi && (v.name && ~v.name.toLowerCase().indexOf(this.data.filterName.toLowerCase()))
       });
       this.setData({devices})
     }

@@ -3,12 +3,12 @@
 <view class='page flex-column-center'>
 
   <view class='btn-box-view flex-row-center'>
-    <view class='btn-sort flex-center' hover-class='btn-hover' catchtap='_sort'>
+    <view class='btn-sort flex-center' hover-stay-time='50' hover-class='btn-hover' catchtap='_sort'>
       <image class='btn-image' src='../../images/home/sort.png'></image>
     </view>
-    <view class='btn-view flex-center' hover-class='btn-hover' catchtap='_scan'>扫描</view>
-    <view class='btn-view flex-center' hover-class='btn-hover' catchtap='_stopScan'>停止扫描</view>
-    <view class='btn-view flex-center' hover-class='btn-hover' catchtap='_refresh'>刷新</view>
+    <view class='btn-view flex-center' hover-class='btn-hover' hover-stay-time='50' catchtap='_scan'>扫描</view>
+    <view class='btn-view flex-center' hover-class='btn-hover' hover-stay-time='50' catchtap='_stopScan'>停止扫描</view>
+    <view class='btn-view flex-center' hover-class='btn-hover' hover-stay-time='50' catchtap='_refresh'>刷新</view>
   </view>
 
   <view class='peripherals-nearby-view flex-row-center'>
@@ -32,7 +32,7 @@
   </view>
 
   <view class='scroll-bg-view'>
-    <image wx:if='{{!devices.length}}' class='no-peripherals' src='../../images/home/no_peripherals.png'></image>
+    <image wx:if='{{!devices.length}}' class='no-peripherals' mode="aspectFill" src='../../images/home/no_peripherals.png'></image>
     <scroll-view scroll-y>
       <block wx:for='{{devices}}' wx:key='{{item.deviceId}}'>
         <view class='device-view flex-row-center' id='{{index}}' hover-class='btn-hover' catchtap='_connect'>
@@ -55,6 +55,13 @@
       </block>
     </scroll-view>
   </view>
+
+  <view class="ad-container">
+    <ad unit-id="adunit-0dfcf9bf7128d3e9" ad-intervals="30"></ad>
+  </view>
+
+  
+
 </view>
 
 
